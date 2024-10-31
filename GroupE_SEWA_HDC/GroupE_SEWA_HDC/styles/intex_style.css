@@ -1,0 +1,92 @@
+body {
+    font-family: roboto, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+main {
+    padding: 50px;
+    margin: 0;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    padding-bottom: 10px;
+    border-bottom: 5px solid #F6AA1C;
+    /* margin-top: 50 not movable */
+}
+
+header ul li{
+    display: inline;
+    font-size: 16px;
+}
+
+.header_links a {
+    color: #621708;
+}
+
+.header_links a:hover {
+    color: #F6AA1C;
+}
+
+.logo {
+    display: block;
+    width: 5%;
+}
+
+/* INTRO */
+.intro h1, p1{
+    display: inline-block;
+    margin-bottom: 64px;
+    margin-top: 50px;
+}
+
+.intro h1 {
+    font-size: 80px;
+    width: 25%;
+    text-align: left;
+    display: inline-block;
+    color: #210901;
+}
+
+.intro p {
+    font-size: 24px;
+    width: 70%;
+    text-align: right;
+    display: inline-block;
+    color: #621708;
+}
+
+.intro img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-radius: 30px;
+    height: 500px;
+}
+
+/* FILERTS */
+.filters {
+
+}
+
+.filters h2{
+    font-size: 48px;
+    text-align: center;
+    color: #210901;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+
+.dropdowns {
+    font-size: 24px;
+}
+/* BUTOONS */ 
+
+/* 
