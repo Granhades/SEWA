@@ -332,7 +332,7 @@ h2{
     background-color: #fff8f2;
     color: #621708;
 }
-/* BUTOONS */ 
+/* BUTOONS and different prices elements*/ 
 .price_buttons {
     display: flex;
     justify-content: space-between;
@@ -341,8 +341,8 @@ h2{
     /*max-width: 400px;*/
 }
 
-
-.price_buttons button {
+/* included the button for <a> element */
+.price_buttons a, button {
     background-color: #F6AA1C;
     color: #210901;
     border: none; 
@@ -351,7 +351,12 @@ h2{
     padding: 12px 25px; 
     font-size: 1em;
     font-weight: bold;
-    cursor: pointer; /* Changes the cursor to a pointer */ 
+    text-decoration:none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; 
     border-radius: 5px;
     transition: all 0.3s ease; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -359,7 +364,7 @@ h2{
 
 
 
-.price_buttons button:hover {
+.price_buttons button:hover, a:hover {
     background-color: #621708;
     color: #ffffff;
     transform: scale(1.05);
