@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <link href="styles/experience.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <!-- header with menu nav -->
+    <header> 
+      <nav>
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/FM_logo.png" alt="Logo" class="logo-image">
+          </a>    
+        </div>
+        <div class="header-links">
+          <ul>
+            <li><a href="about.html">About us</a></li> 
+            <li><a href="profile.html">Profile</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- 15 euros or less structure  -->
+    <main>
+      <!-- same class 'intro' from index -->
+      <section class ="intro">
+        <h1>15 euros or less</h1>
+        <ul>
+          <li><strong>Party Size: </strong>3</li>
+          <li><strong>Day: </strong>15 Nov. 2024</li>
+          <li><strong>Zone: </strong>D02</li>
+          <li><strong>Allergens: </strong>Gluten</li>
+        </ul>
+        <fieldset class ="change-filters">
+        <!-- Comeback to the main menu is <a> instead button for better perfomance-->
+          <a href="index.html" name="changeFilters">Change Filters</a>
+        </fieldset>
+      </section>
+      
+      <section class="experience-summary">
+        <h2>Experience summary</h2>
+        <div class ="experience-details">
+          <div class="restaurant-details">
+            <!-- TODO: We should change after for variable with restaurant-name, restaurant-rating, restaurant-type etc -->
+            <h3 class="restaurant-name" name="">Las Tapas de Lola</h3>
+              
+            
+            <div class="food-type">
+              <span class = "food-type"><strong>Food type:</strong> Spanish</span>
+            </div>
+            
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum nisl porttitor, volutpat velit in, condimentum ligula. In lacinia luctus orci ut ornare. Mauris et magna tortor. Sed pulvinar velit enim, quis volutpat nibh dictum ac. Donec in lacus pellentesque, aliquet massa a, cursus ipsum. Proin commodo dui non tortor cursus elementum. Suspendisse imperdiet efficitur lacus, nec ultricies neque sodales nec. In hac habitasse platea dictumst.
+
+              Sed a leo tempus, blandit nisl eu, hendrerit leo. Sed ac sapien ut turpis lacinia facilisis. Phasellus id mauris ut magna sollicitudin varius sit amet tincidunt orci. Aenean imperdiet ullamcorper laoreet. Duis dignissim ipsum a velit imperdiet tempus. Cras dictum arcu nec euismod faucibus. Suspendisse pretium felis quis gravida finibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque fringilla quam non interdum lobortis. In hac habitasse platea dictumst. Donec elementum fermentum purus, sit amet placerat sem molestie in. Praesent eget arcu sit amet mauris maximus euismod et non tortor. Pellentesque sodales libero nibh, ut condimentum arcu feugiat nec.
+            </p>
+            <!-- The items that we gonna offer for the prize -->
+             <!--TODO: include the variables to php about main course drinks etc-->
+            <ul class ="items-included-order"> 
+              <li class ="starters">Starters : 1 </li> 
+              <li class ="main-course">Main courses : 1</li> 
+              <li class ="drinks">Drinks : 2</li> 
+              <li class ="deserts">Any Desert? No</li> 
+              <li class ="duration">Duration : 60 min</li> 
+            </ul>
+            <fieldset class="summary-buttons">
+              <!--TODO: Create the pop up to book now -->
+              <button class ="book-now" name="">Book Now</button>
+              <!-- Comeback to the main menu is <a> instead button for better perfomance-->
+              <a href="index.html" class ="change-experience" name="changeExperience">Change Experience</a>
+
+            </fieldset>
+            
+          </div>
+
+<!-- Image info about restaurant. Reuse the class from profile.html -->
+          <div class="restaurant-card">
+            <div class="rating-container">
+              <span class ="rating"><strong>Rating </strong>⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="restaurant-picture">
+              <img src="images/spanish.jpg" alt="Spanish restaurant picture" title="Las Tapas de Lola">
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+
+
+  </body>
+
+
+
+
+</html>

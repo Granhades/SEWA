@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="styles/profile.css">
+</head>
+<body>
+    <div class="header-bar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/FM_logo.png" alt="Logo" class="logo-image">
+            </a>
+        </div>
+        <nav>
+            <a href="about.html">About us</a>
+            <a href="log_in.html">Log in / Sign up</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <h2>Profile</h2>
+                <p>Edit data</p>
+                <form>
+                    <input type="text" placeholder="Name: User">
+                    <input type="text" placeholder="Last name: User">
+                    <input type="email" placeholder="Mail: user@mail.com">
+                    <input type="password" placeholder="Password: ********">
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </aside>
+
+        <main class="content">
+            <h3>Previews</h3>
+            <div class="restaurant">
+                <div class="restaurant-info">
+                    <h4>Name of Restaurant</h4>
+                    <p>Rating: ⭐⭐⭐⭐⭐</p>
+                    <p>Food type: Chinese</p>
+                </div>
+                <div class="restaurant-image" style="background-image: url('images/chinese.jpg');"></div>
+            </div>
+
+            <div class="restaurant">
+                <div class="restaurant-info">
+                    <h4>Name of Restaurant</h4>
+                    <p>Rating: ⭐⭐⭐⭐⭐</p>
+                    <p>Food type: Italian</p>
+                </div>
+                <div class="restaurant-image" style="background-image: url('images/italian.jpg');"></div>
+            </div>
+        </main>
+
+        <div class="activity-recommendations">
+          
+            <div class="activity-history">
+                <h3>Recently Visited Restaurants</h3>
+                <ul>
+                    <li>
+                        <p>Acapulco</p>
+                        <span>mexican Cuisine</span>
+                    </li>
+                    <li>
+                        <p>Las Tapas de Lola</p>
+                        <span>Spanish Cuisine</span>
+                    </li>
+                    <li>
+                        <p>Sultan's Grill</p>
+                        <span>Turkish Cuisine</span>
+                    </li>
+                </ul>
+            </div>
+
+            
+            <div class="featured-restaurants">
+                <h3>Top Popular Restaurants</h3>
+                <div class="restaurant-card">
+                    <img src="images/mexican.jpg" alt="Restaurant 1">
+                    <p>Acapulco</p>
+                    <span>⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="restaurant-card">
+                    <img src="images/spanish.jpg" alt="Restaurant 2">
+                    <p>Las Tapas de Lola</p>
+                    <span>⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="restaurant-card">
+                    <img src="images/turkish.jpg" alt="Restaurant 3">
+                    <p>Sultan's Grill</p>
+                    <span>⭐⭐⭐⭐⭐</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
