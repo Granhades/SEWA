@@ -27,33 +27,62 @@
             <img src="images/tryOne.jpg" alt="Pubs and food images">
         </section>
         
-        <h2>Use Filters To Get The Experience You Are Waiting For</h2>
+        <h2>Use Filters To Get The Experience That You Are Waiting For</h2>
         <fieldset class="dd_filters">
-            <label for="party_size">Party-size</label>
+            
+            <label for="party_size">
+                <img src="images/User.png" alt="Image about how many people" class="people-icon">People
+            </label> <!--  I changed party size for People TODO: rename the class html and css -->
             <select id="party_size" name="">
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-                <option value="4">Four</option>
-                <option value="5">More than four</option>
+                <option value="1">1 Person</option>
+                <option value="2">2 People</option>
+                <option value="3">3 People</option>
+                <option value="4">4 People</option>
+                <option value="5">5 People</option>
+                <option value="6">6 People</option>
+                <option value="7">7 People</option>
+                <option value="8">8 People</option>
+                <option value="9">9 People</option>
+                <option value="10">10 People</option>
+                <option value="11">11 People</option>
+                <option value="12">12 People</option>
+
+
                 </select>
-            <label for="food_type">Food-type</label>
-            <select id="food_type" name="">
-                <option value="">Any</option>
-                <option value="2">Pub</option>
-                <option value="3">Italian</option>
-                <option value="4">Mexican</option>
-                <option value="5">American</option>
-                </select>
-            <label for="zone">Zone</label>
+
+            
+
+            <label for="date">
+                <img src="images/calendar.png" alt="Image about calendar" class="calendar-icon">Day
+            </label> <!--  TODO: change the name of label to Day  -->
+            
+            
+            <input type="date" id="date" name="date">
+            
+
+               
+            <label for="zone">
+                <img src="images/location.png" alt="Icon about location" class="location-icon"> Zone
+            </label>
             <select id="zone" name="">
-                <option value="">Any</option>
-                <option value="2">Dublin 1 & 3</option>
-                <option value="3">Dublin 2 & 4</option>
-                <option value="4">Dublin 5 & 7</option>
-                <option value="5">Dublin 6 & 8</option>
+                <option value="1">D1 & D3</option>
+                <option value="2">D2 & D4</option>
+                <option value="3">D5 & D7</option>
+                <option value="4">D6 & D8</option>
+                <option value="5">D9 & D11</option>
+                <option value="6">D10 & D12</option>
+                <option value="7">D13 & D15</option>
+                <option value="8">D14 & D16</option>
+                <option value="9">D17 & D19</option>
+                <option value="10">D18 & D20</option>
+
+
+                
             </select>
-            <label for="allergenes">Allergenes</label>
+            
+            <label for="allergenes">
+                <img src="images/allergy.png" alt="Icon about allergenes" class="allergenes-icon"> Allergenes
+            </label>
             <select id="allergenes" name="">
                 <option value="">None</option>
                 <option value="2">Gluten</option>
