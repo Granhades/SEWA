@@ -80,9 +80,6 @@ header ul li{
         transition: color 0.3s ease;
     }
     
-    .header_links a:hover {
-        color: #210901;
-    }
     
     .logo {
         margin: 0.5%;
@@ -201,11 +198,6 @@ header ul li{
         box-shadow: 0 4px 6px #210901;
     }
     
-    .rand_price_buttons .random:hover {
-        background-color: #621708;
-        color: #ffffff;
-        transform: scale(1.05);
-    }
     
     
     @media screen and (max-width: 768px) {
@@ -270,7 +262,6 @@ header ul li{
     display: block;
     width: 5%;
     height: auto;
-    border: 5x groove white;
     border-radius: 10px;
 }
 
@@ -339,23 +330,17 @@ h2{
 
     display:flex;
     align-items: center;
-    gap: 0;
     margin: 0;
-    white-space: nowrap;
+    
 }
 
 .dd_filters img {
     width: 24px;
     height: 24px;
-    margin: 0;
-    vertical-align: middle;
+    
 }
 
-.dd_filters div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+
 
 
 /* BUTOONS and different prices elements*/ 
