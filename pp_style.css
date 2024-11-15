@@ -1,0 +1,135 @@
+/* Styling for the body of all pop-ups */
+.popup_box {
+    position: fixed; /* Keeps the pop-up in a fixed position relative to the viewport */
+    inset: 0; /* Stretches the pop-up to cover the entire viewport */
+    backdrop-filter: blur(10px); /* Adds a blur effect to the background */
+    display: flex;
+    /* Centers all */
+    align-items: center; 
+    justify-content: center;
+    font-family: roboto, Arial, sans-serif; /* Fonts */
+}
+
+/* Styling for the main content area of the pop-up */
+.content {
+    position: relative;
+    background: #F6AA1C;
+    padding: 1em 2em;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+}
+
+/* Header styling for all pop-ups */
+.content header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styling for the header title */
+.content header h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Close button styling */
+.content .close-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Styling for the booking experiences */
+.content .book {
+    display: flex;
+    flex-direction: row; /* Arranges items in a row */
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Fieldset styling for all input forms */
+.content fieldset {
+    display: flex;
+    flex-direction: column; /* Arranges items in a column */
+    flex: 1;
+    margin-right: 20px;
+    border: none;
+    padding: 2rem 0;
+}
+
+
+/* All label styling*/
+.content label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* All input styling*/
+.content input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Button styling for pay, log-in and sign-up */
+.pay_btn, .log_in_btn, .sign_up_btn{
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Button styling for a new sign-up */
+.new_sign_up_btn {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover function for all buttons */
+.content button:hover {
+    /* Change background color, letter color and makes them bigger */
+    background-color: #621708; 
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Styling for the experience information section */
+.experience_info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Styling for h2 titles in experience information */
+.experience_info h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Styling for paragraph text in experience information */
+.experience_info p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+
+/* Targets the pop-up box when it's open, making it visible */
+.popup_box:target {
+    display: flex;
+}
