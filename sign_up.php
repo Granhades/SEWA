@@ -28,7 +28,7 @@
                 <label for="mail">Mail</label>
                 <input type="text" name="user_mail" placeholder="Mail">
 
-                <label for="user_pasword">Pasword</label>
+                <label for="user_pasword">Password</label>
                 <input type="password" name="user_password" placeholder="Pasword">
 
                 <?php if (isset($_GET['error'])) { ?>

@@ -1,10 +1,12 @@
 <?php
 
+//sign_up_class
+
 session_start();
 include "db_conn.php";
 
 if (isset($_POST['user_name']) && isset($_POST['user_last_name']) && isset($_POST['user_mail']) && isset($_POST['user_password'])) {
-    
+    //To clean the string
     function validate($data){
         $data = trim($data);
         $data = stripslashes($data);
@@ -16,7 +18,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_last_name']) && isset($_POS
     $ulast_name=validate($_POST['user_last_name']);
     $umail= validate($_POST['user_mail']);
     $upass= validate($_POST['user_password']);
-
+    //Declarate possibles errors
     if (empty($uname)) {
         header("Location: sign_up.php?error=Name is required");
         exit();
@@ -42,7 +44,7 @@ if (isset($_POST['user_name']) && isset($_POST['user_last_name']) && isset($_POS
         header("Location: sign_up.php?error=Invalid Password length");
         exit();
     } else {
-
+        //Showing the information because the user input is correct
         $todaysDate = date('d/m/Y');
         $fullInfo= $uname."','".$ulast_name."','".$umail."','".$upass."','".$todaysDate;
         $sql="INSERT INTO users (first_name,last_name,email,password,created_at)	

@@ -6,7 +6,6 @@ if (!isset($_POST['expId'])) {
 
 include "db_conn.php";
 session_start();
-
 //Redirect to index if user press change_exp
 if (isset($_POST['change_exp'])) {
     // Redirection to index
@@ -14,10 +13,11 @@ if (isset($_POST['change_exp'])) {
     exit();
 }
 
+//Get back the details choosed from the user
 $expId= $_POST['expId'];
 $partySize= $_POST['partySize'];
 $expDate= $_POST['expDate'];
-
+//SQL query
 $sql= "SELECT rest.name, exp.price, rest.zone, rest.address, rest.phone						
 FROM experience exp							
 JOIN restaurants rest on rest.id = exp.restaurant_id							
@@ -54,7 +54,7 @@ $row = mysqli_fetch_assoc($result);
                     <label for="user_mail">Mail</label>
                     <input type="email" id="user_mail" placeholder="Mail for reservation" name="user_mail">
                     
-                    <label for="password">Mail</label>
+                    <label for="password">Password</label>
                     <input type="password" id="password" placeholder="Password" name="user_password">
                     
                     <?php if (isset($_GET['error'])) { ?>

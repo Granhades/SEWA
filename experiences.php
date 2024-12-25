@@ -53,7 +53,7 @@ $row = mysqli_fetch_assoc($result);
             <li><a href="log_in.php">Log In/Sign Up</a></li>
         </ul>
     </header>
-    <!-- 15 euros or less structure  -->
+    <!-- Experience X euros structure  -->
     <main>
       <!-- same class 'intro' from index -->
       <section class ="experience-intro">
@@ -78,7 +78,7 @@ $row = mysqli_fetch_assoc($result);
         <div class ="experience-details">
           <!-- About restaurants details -->
           <div class="restaurant-details">
-            <!-- TODO: With PHP we should change after for variableS with restaurant-name, restaurant-rating, restaurant-type etc -->
+            <!-- restaurant-name, restaurant-rating, restaurant-type etc -->
             <h3 class="restaurant-name" name=""><?php echo $row['name'] ?></h3>
               
             <div class="food-type">
@@ -99,7 +99,7 @@ $row = mysqli_fetch_assoc($result);
             </ul>
             <!-- Buttons for Book Now & Change Experience -->
             <form class="summary-buttons" action="pay_experience.php" method="post">
-              <!--TODO: use PHP to link the pop up book now -->
+              <!-- link the pop up book now -->
               <button class ="book-now" name="book_now"> Book Now </button>
               <input type="hidden" name="expId" value="<?php echo  $row['exp_id']; ?>">
               <input type="hidden" name="partySize" value="<?php echo  $partySize; ?>">
