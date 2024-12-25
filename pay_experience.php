@@ -7,6 +7,13 @@ if (!isset($_POST['expId'])) {
 include "db_conn.php";
 session_start();
 
+//Redirect to index if user press change_exp
+if (isset($_POST['change_exp'])) {
+    // Redirection to index
+    header("Location: index.php");
+    exit();
+}
+
 $expId= $_POST['expId'];
 $partySize= $_POST['partySize'];
 $expDate= $_POST['expDate'];
