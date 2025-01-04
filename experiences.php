@@ -1,22 +1,17 @@
 <?php
-if (!isset($_POST['filter_date'])) {
-  header("Location: index.php");
-  exit();
-} 
-
 include "db_conn.php";
 session_start();
 
 $seenRest=implode(',', $_SESSION['seenRest']);
 
-$partySize= $_POST['party_size'];
-$expDate= $_POST['filter_date'];
-$zone= $_POST['zone'];
-$allergen= $_POST['allergen_info'];
-if ($_POST['price_filter'] === 'random'){
+$partySize= $_SESSION['partySize'];
+$expDate= $_SESSION['expDate'];
+$zone= $_SESSION['zone'];
+$allergen= $_SESSION['allergen'];
+if ($_SESSION['price_filter'] === 'random'){
     $price= '';
 } else {
-    $price= 'and exp.price='.$_POST['price_filter'];
+    $price= 'and exp.price='.$_SESSION['price_filter'];
 }
 
 $sql= "SELECT rest.id restaurant_id, rest.name, rest.cusine, rest.rating, exp.price, image_link,						
@@ -37,26 +32,31 @@ $row = mysqli_fetch_assoc($result);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience</title>
-    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <link href="styles/experience.css" rel="stylesheet" type="text/css">
   </head>
 
   <body>
     <!-- header with menu nav -->
-    <header>
-        <!-- logo to comeback index-->
-        <a href="index.php">
-        <img src="images/FM_logo.png" alt="Feed me logo" class="logo">
-        </a>
-        <ul class="header_links">
-			<li><a href="about.html">About us</a></li> 
-            <li><a href="profile.php">Profile</a></li>
-            <li><a href="log_in.php">Log In/Sign Up</a></li>
-        </ul>
+    <header> <!-- -->
+      <nav>
+        <div class="logo"> <!-- we use the logo to comeback to menu -->
+          <a href="index.php">
+            <img src="images/FM_logo.png" alt="Logo" class="logo-image">
+          </a>    
+        </div>
+        <!--Header links -->
+        <div class="header-links">
+          <ul>
+            <li><a href="about.html">About us</a></li>  <!-- about -->
+            <li><a href="log_in.php">Log In/Sign Up</a></li> <!-- profile-->
+          </ul>
+        </div>
+      </nav>
     </header>
-    <!-- Experience X euros structure  -->
+    <!-- 15 euros or less structure  -->
     <main>
       <!-- same class 'intro' from index -->
-      <section class ="experience-intro">
+      <section class ="intro">
         <!--Structure for filters selected by the user -->
         <h1><?php echo $row['price'] ?> euros or less</h1>
         <ul>
@@ -68,7 +68,7 @@ $row = mysqli_fetch_assoc($result);
         <!-- change filters comeback to the menu -->
         <fieldset class ="change-filters">
         <!-- comeback button as <a> reference-->
-          <button class ="change-experience-btn" onClick="window.location.reload();" >Get other experience</button>
+          <button onClick="window.location.reload();" class ="change-experience">Get other experience</button>
         </fieldset>
       </section>
       <!-- Experience summary part on the left side -->
@@ -78,7 +78,7 @@ $row = mysqli_fetch_assoc($result);
         <div class ="experience-details">
           <!-- About restaurants details -->
           <div class="restaurant-details">
-            <!-- restaurant-name, restaurant-rating, restaurant-type etc -->
+            <!-- TODO: With PHP we should change after for variableS with restaurant-name, restaurant-rating, restaurant-type etc -->
             <h3 class="restaurant-name" name=""><?php echo $row['name'] ?></h3>
               
             <div class="food-type">
@@ -99,11 +99,11 @@ $row = mysqli_fetch_assoc($result);
             </ul>
             <!-- Buttons for Book Now & Change Experience -->
             <form class="summary-buttons" action="pay_experience.php" method="post">
-              <!-- link the pop up book now -->
+              <!--TODO: use PHP to link the pop up book now -->
               <button class ="book-now" name="book_now"> Book Now </button>
-              <input type="hidden" name="expId" value="<?php echo  $row['exp_id']; ?>">
-              <input type="hidden" name="partySize" value="<?php echo  $partySize; ?>">
-              <input type="hidden" name="expDate" value="<?php echo $expDate; ?>">
+              <!--------------->
+              <?php $_SESSION['expId']=$row['exp_id']; ?>
+              <!--------------->
               <!-- Change Experience -->
               <button class ="change-experience" name="change_exp">Change Experience</button>
             </form>
