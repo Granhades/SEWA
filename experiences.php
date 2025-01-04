@@ -32,31 +32,25 @@ $row = mysqli_fetch_assoc($result);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience</title>
-    <link href="styles/experience.css" rel="stylesheet" type="text/css">
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
   </head>
 
   <body>
     <!-- header with menu nav -->
-    <header> <!-- -->
-      <nav>
-        <div class="logo"> <!-- we use the logo to comeback to menu -->
-          <a href="index.php">
-            <img src="images/FM_logo.png" alt="Logo" class="logo-image">
-          </a>    
-        </div>
-        <!--Header links -->
-        <div class="header-links">
-          <ul>
-            <li><a href="about.html">About us</a></li>  <!-- about -->
-            <li><a href="log_in.php">Log In/Sign Up</a></li> <!-- profile-->
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <!-- 15 euros or less structure  -->
+    <header>
+        <!-- logo to comeback index-->
+        <a href="index.php">
+        <img src="images/FM_logo.png" alt="Feed me logo" class="logo">
+        </a>
+        <ul class="header_links">
+			<li><a href="about.html">About us</a></li> 
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="log_in.php">Log In/Sign Up</a></li>
+        </ul>
+    <!-- Experience structure  -->
     <main>
       <!-- same class 'intro' from index -->
-      <section class ="intro">
+      <section class ="experience-intro">
         <!--Structure for filters selected by the user -->
         <h1><?php echo $row['price'] ?> euros or less</h1>
         <ul>
@@ -68,7 +62,7 @@ $row = mysqli_fetch_assoc($result);
         <!-- change filters comeback to the menu -->
         <fieldset class ="change-filters">
         <!-- comeback button as <a> reference-->
-          <button onClick="window.location.reload();" class ="change-experience">Get other experience</button>
+          <button onClick="window.location.reload();" class ="change-experience-btn">Get other experience</button>
         </fieldset>
       </section>
       <!-- Experience summary part on the left side -->
@@ -89,7 +83,6 @@ $row = mysqli_fetch_assoc($result);
             <?php echo $row['description'] ?>
             </p>
             <!-- The list of the surprised items that we gonna offer for the prize -->
-             <!--TODO: include the variables to php about main course drinks etc-->
             <ul class ="items-included-order"> 
               <li class ="starters">Starters : <?php echo $row['starters'] ?> </li> 
               <li class ="main-course">Main courses : <?php echo $row['main_courses'] ?></li> 
