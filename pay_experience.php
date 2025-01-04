@@ -1,23 +1,11 @@
 <?php
-if (!isset($_POST['expId'])) {
-    header("Location: index.php");
-    exit();
-} 
-
 include "db_conn.php";
 session_start();
-//Redirect to index if user press change_exp
-if (isset($_POST['change_exp'])) {
-    // Redirection to index
-    header("Location: index.php");
-    exit();
-}
 
-//Get back the details choosed from the user
-$expId= $_POST['expId'];
-$partySize= $_POST['partySize'];
-$expDate= $_POST['expDate'];
-//SQL query
+$expId= $_SESSION['expId'];
+$partySize= $_SESSION['partySize'];
+$expDate= $_SESSION['expDate'];
+
 $sql= "SELECT rest.name, exp.price, rest.zone, rest.address, rest.phone						
 FROM experience exp							
 JOIN restaurants rest on rest.id = exp.restaurant_id							
@@ -44,12 +32,12 @@ $row = mysqli_fetch_assoc($result);
             <!-- Header section with a welcome message and close button -->
             <header>
                 <h1> Confirm Experience</h1>
-                <a href="index.php"><button class="close_btn">×</button></a>
+                <button class="close_btn" type="submit" name="out">×</button>
             </header>
 
             <!-- Section containing a fieldset for user input (name and email) and button to pay experience and on the other side displays info of the experience about to be purchased -->
             <section class="book"> 
-                <fieldset class="reservation_info">
+                <section class="reservation_info">
                     <p>Please Log In!</p>
                     <label for="user_mail">Mail</label>
                     <input type="email" id="user_mail" placeholder="Mail for reservation" name="user_mail">
@@ -62,8 +50,12 @@ $row = mysqli_fetch_assoc($result);
                     <p class="error"><?php echo $_GET['error']; ?></p>
                     <?php } ?>
 
-                    <button class="pay_btn">Pay</button>
-                </fieldset>
+                    <?php $fullInfo= $row['name'].";Adress: ".$row['address'].";Party size: ".$partySize.";Price per person: ".$row['price'].";Total :".($partySize*$row['price'])."€"; ?>
+                    <input type="hidden" name="fullInfo" value="<?php echo  $fullInfo; ?>">
+                    <input type="hidden" name="expId" value="<?php echo  $expId; ?>">
+
+                    <button class="pay_btn" type="submit" name="type">Pay</button>
+                    </section>
                 <!-- Section about experience info in detail -->
                 <section class="experience_info">
                     <h2><?php echo $row['name'] ?></h2>
@@ -72,10 +64,6 @@ $row = mysqli_fetch_assoc($result);
                     <p>Party size: <?php echo $partySize ?></p>
                     <p>Price per person: <?php echo $row['price'] ?>€</p>
                     <h3> TOTAL: <?php echo $partySize*$row['price']?>€</h3>
-                    <?php $fullInfo= $row['name'].";Adress: ".$row['address'].";Party size: ".$partySize.";Price per person: ".$row['price'].";Total :".($partySize*$row['price'])."€"; ?>
-                    
-                    <input type="hidden" name="fullInfo" value="<?php echo  $fullInfo; ?>">
-                    <input type="hidden" name="expId" value="<?php echo  $expId; ?>">
                 </section>
             </section>
         </form>
